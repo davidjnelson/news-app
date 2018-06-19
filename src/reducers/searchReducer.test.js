@@ -1,16 +1,9 @@
 import { searchReducer } from './searchReducer';
 
-const initialState = {
-  message: 'Please enter your search term above and click Search.',
-  articles: [],
-  searchText: '',
-  sortType: ''
-};
-
 describe('Search Reducer', () => {
   describe('SET_MESSAGE action', () => {
     it('sets the message', () => {
-      expect(searchReducer(initialState, {
+      expect(searchReducer(undefined, {
         type: 'SET_MESSAGE',
         message: 'test'
       })).toEqual({
@@ -24,7 +17,7 @@ describe('Search Reducer', () => {
 
   describe('CHANGE_SORT_TYPE action', () => {
     it('changes the sort type', () => {
-      expect(searchReducer(initialState, {
+      expect(searchReducer(undefined, {
         type: 'CHANGE_SORT_TYPE',
         sortType: 'popularity'
       })).toEqual({
@@ -38,7 +31,7 @@ describe('Search Reducer', () => {
 
   describe('SET_ARTICLES action', () => {
     it('sets the articles', () => {
-      expect(searchReducer(initialState, {
+      expect(searchReducer(undefined, {
         type: 'SET_ARTICLES',
         articles: [{ title: 'cool'}]
       })).toEqual({
@@ -52,7 +45,7 @@ describe('Search Reducer', () => {
 
   describe('CHANGE_SEARCH_TEXT action', () => {
     it('sets the search text', () => {
-      expect(searchReducer(initialState, {
+      expect(searchReducer(undefined, {
         type: 'CHANGE_SEARCH_TEXT',
         searchText: 'new search text'
       })).toEqual({
